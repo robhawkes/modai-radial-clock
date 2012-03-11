@@ -1,0 +1,150 @@
+<!DOCTYPE html5>
+
+<html>
+	<head>
+		<title>Modai Radial Clock</title>
+
+		<style>
+			body {
+				background-color: #8bcbcd;
+			}
+
+			.clock {
+				background-color: #fff;
+				border: 15px solid #f9e04a;
+				border-radius: 194px;
+				box-shadow: 0 0 40px #fdf6c9;
+				height: 194px;
+				margin: 50px auto 0;
+				overflow: hidden;
+				position: relative;
+				width: 194px;
+			}
+
+			.clock-face {
+				border: 10px solid;
+				border-radius: 174px;
+				height: 174px;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 174px;
+			}
+
+			.clock-hours {
+				border-color: #31331d;
+			}
+
+			.clock-minutes {
+				border-color: #6f7073;
+				border-radius: 158px;
+				border-width: 10px;
+				height: 158px;
+				margin: 8px 0 0 8px;
+				width: 158px;
+			}
+
+			.clock-seconds {
+				border-color: #c1bfc0;
+				border-radius: 142px;
+				border-width: 8px;
+				height: 142px;
+				margin: 18px 0 0 18px;
+				width: 142px;
+			}
+
+			.clock-hand {
+				-moz-transform: rotate(45deg);
+				background-color: black;
+				height: 20px;
+				left: 50%;
+				margin: 0 0 0 -10px;
+				position: absolute;
+				top: -11px;
+				width: 20px;
+			}
+
+				.clock-hours .clock-hand {
+					background-color: #31331d;
+				}
+
+				.clock-minutes .clock-hand {
+					background-color: #6f7073;
+				}
+
+				.clock-seconds .clock-hand {
+					background-color: #c1bfc0;
+				}
+
+			.clock-time {
+				display: block;
+				height: 40px;
+				font-family: monospace;
+				font-size: 40px;
+				left: 0;
+				line-height: 40px;
+				margin: -20px 0 0 0;
+				position: absolute;
+				text-align: center;
+				top: 50%;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="clock">
+			<div class="clock-face clock-seconds">
+				<span class="clock-hand"></span>
+			</div>
+
+			<div class="clock-face clock-minutes">
+				<span class="clock-hand"></span>
+			</div>
+
+			<div class="clock-face clock-hours">
+				<span class="clock-hand"></span>
+			</div>
+
+			<time datetime="" class="clock-time">0:00</time>
+		</section>
+
+		<script src="moment.min.js"></script>
+		<script>
+			var hourHands = document.getElementsByClassName("clock-hours");
+			var minuteHands = document.getElementsByClassName("clock-minutes");
+			var secondHands = document.getElementsByClassName("clock-seconds");
+			var timeOutput = document.getElementsByClassName("clock-time")
+			var time;
+
+			function updateClock() {
+				// Store current time
+				time = moment();
+				
+				// Get hour and minute values
+				var hours = time.format("h")-1;
+				var minutes = time.format("m");
+				var seconds = time.format("s");
+
+				// Calculate angles
+				var hourAngle = (360/12)*hours;
+				var minuteAngle = (360/60)*minutes;
+				var secondAngle = (360/60)*seconds;
+
+				// Update clock DOM
+				// TODO: Run through all clocks, not just first one
+				hourHands[0].style.MozTransform = "rotate("+hourAngle+"deg)";
+				minuteHands[0].style.MozTransform = "rotate("+minuteAngle+"deg)";
+				secondHands[0].style.MozTransform = "rotate("+secondAngle+"deg)";
+
+				var timeString = hours+":"+minutes;
+				if (timeOutput[0].innerHTML != timeString) {
+					timeOutput[0].innerHTML = hours+":"+minutes;
+				}
+
+				setTimeout(updateClock, 900);
+			}
+
+			updateClock();
+		</script>
+	</body>
+</html>
