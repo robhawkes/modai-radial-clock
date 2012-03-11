@@ -21,8 +21,22 @@ function updateClock() {
 	// Update clock DOM
 	// TODO: Run through all clocks, not just first one
 	hourHands[0].style.MozTransform = "rotate("+hourAngle+"deg)";
+	hourHands[0].style.WebkitTransform = "rotate("+hourAngle+"deg)";
+	hourHands[0].style.OTransform = "rotate("+hourAngle+"deg)";
+	hourHands[0].style.MsTransform = "rotate("+hourAngle+"deg)";
+	hourHands[0].style.transform = "rotate("+hourAngle+"deg)";
+
 	minuteHands[0].style.MozTransform = "rotate("+minuteAngle+"deg)";
+	minuteHands[0].style.WebkitTransform = "rotate("+minuteAngle+"deg)";
+	minuteHands[0].style.OTransform = "rotate("+minuteAngle+"deg)";
+	minuteHands[0].style.MsTransform = "rotate("+minuteAngle+"deg)";
+	minuteHands[0].style.transform = "rotate("+minuteAngle+"deg)";
+
 	secondHands[0].style.MozTransform = "rotate("+secondAngle+"deg)";
+	secondHands[0].style.WebkitTransform = "rotate("+secondAngle+"deg)";
+	secondHands[0].style.OTransform = "rotate("+secondAngle+"deg)";
+	secondHands[0].style.MsTransform = "rotate("+secondAngle+"deg)";
+	secondHands[0].style.transform = "rotate("+secondAngle+"deg)";
 
 	var timeString = hours+":"+("0"+minutes).substr(-2);
 	if (timeOutput[0].innerHTML != timeString) {
