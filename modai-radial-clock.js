@@ -9,7 +9,7 @@ function updateClock() {
 	time = moment();
 	
 	// Get hour and minute values
-	var hours = time.format("h")-1;
+	var hours = time.format("h");
 	var minutes = time.format("m");
 	var seconds = time.format("s");
 
