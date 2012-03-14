@@ -2,6 +2,9 @@
 @import "compass/css3/box-shadow";
 @import "compass/css3/font-face";
 @import "compass/css3/transform";
+@import "compass/css3/transition";
+
+@import "compass/typography/lists/bullets";
 
 @include font-face("Zag Regular", font-files("zag_regular-webfont.woff", woff, "zag_regular-webfont.ttf", truetype, "zag_regular-webfont.svg", svg), "zag_regular-webfont.eot");
 @include font-face("Zag Bold", font-files("zag_bold-webfont.woff", woff, "zag_bold-webfont.ttf", truetype, "zag_bold-webfont.svg", svg), "zag_bold-webfont.eot");
@@ -15,18 +18,27 @@ body {
 }
 
 .clock {
-	@include border-radius(194px);
-	border: 15px solid;
-	height: 194px;
+	height: 224px;
 	margin: 50px auto 0;
-	overflow: hidden;
 	position: relative;
-	width: 194px;
+	width: 224px;
+
+	.clock-face {
+		border: 15px solid;
+		height: 194px;
+		overflow: hidden;
+		position: relative;
+		width: 194px;
+		z-index: 10;
+	}
 
 	&.day {
-		@include box-shadow(0 0 40px #fdf6c9);
-		background-color: #fff;
-		border-color: #f9e04a;
+		.clock-face {
+			@include border-radius(194px);
+			@include box-shadow(0 0 40px #fdf6c9);
+			background-color: #fff;
+			border-color: #f9e04a;
+		}
 
 		.clock-time {
 			color: #000;
@@ -36,12 +48,12 @@ body {
 			}
 		}
 
-		.clock-face {
+		.clock-unit {
 			&.clock-hours {
-				border-color: #31331d;
+				border-color: #282828;
 
 				.clock-hand {
-					background-color: #31331d;
+					background-color: #282828;
 				}
 			}
 
@@ -64,9 +76,11 @@ body {
 	}
 
 	&.night {
-		@include box-shadow(0 0 40px #fdf6c9);
-		background-color: #7d8288;
-		border-color: #faf6d1;
+		.clock-face {
+			@include box-shadow(0 0 40px #fdf6c9);
+			background-color: #7d8288;
+			border-color: #faf6d1;
+		}
 
 		.clock-time {
 			color: #fff;
@@ -76,12 +90,12 @@ body {
 			}
 		}
 
-		.clock-face {
+		.clock-unit {
 			&.clock-hours {
-				border-color: #31331d;
+				border-color: #282828;
 
 				.clock-hand {
-					background-color: #31331d;
+					background-color: #282828;
 				}
 			}
 
@@ -126,7 +140,7 @@ body {
 		}
 	}
 
-	.clock-face {
+	.clock-unit {
 		@include border-radius(174px);
 		border: 10px solid;
 		height: 174px;
@@ -160,6 +174,84 @@ body {
 			height: 142px;
 			margin: 18px 0 0 18px;
 			width: 142px;
+		}
+	}
+
+	.clock-menu {
+		left: 50%;
+		margin: -40px 0 0 -75px;
+		overflow: hidden;
+		position: relative;
+		width: 150px;
+		z-index: -10;
+
+		ul {
+			@include transition-property(all);
+			@include transition-duration(0.4s);
+			@include no-bullets();
+			color: #000;	
+			font-family: "Zag Bold", Verdana, sans-serif;
+			font-size: 40px;
+			margin: -300px 0 0;
+			padding: 0;
+			text-align: center;
+		}
+
+		li {
+			background-color: #fff;
+			border-top: 2px solid #c1bfc0;
+			padding: 10px 0;
+		}
+
+		.clock-menu-alarm {
+			border: none;
+			color: #fff;
+			height: 105px;
+			padding: 0;
+
+			img {
+				bottom: 0;
+				margin-top: 55px;
+				width: 40px;
+			}
+		}
+
+		.clock-menu-time {
+			&:hover {
+				background-color: #c1bfc0;
+				cursor: pointer;
+			}
+		}
+
+		.clock-menu-button {
+			@include border-bottom-left-radius(150px);
+			@include border-bottom-right-radius(150px);
+			background-color: #282828;
+			border: none;
+			color: #fff;
+			font-family: Verdana, sans-serif;
+			font-size: 35px;
+			font-weight: bold;
+			height: 75px;
+			line-height: 65px;
+			padding: 0;
+			width: 100%;
+
+			&:hover {
+				background-color: #6f7073;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		.clock-menu {
+			ul {
+				@include transition-property(all);
+				@include transition-duration(0.4s);
+				margin-top: 0;
+			}
 		}
 	}
 }

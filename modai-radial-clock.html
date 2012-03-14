@@ -7,19 +7,32 @@
 	</head>
 	<body>
 		<section class="clock day">
-			<div class="clock-face clock-seconds">
-				<span class="clock-hand"></span>
+			<div class="clock-face">
+				<div class="clock-unit clock-seconds">
+					<span class="clock-hand"></span>
+				</div>
+
+				<div class="clock-unit clock-minutes">
+					<span class="clock-hand"></span>
+				</div>
+
+				<div class="clock-unit clock-hours">
+					<span class="clock-hand"></span>
+				</div>
+
+				<time datetime="" class="clock-time">0:00<small>am</small></time>
 			</div>
 
-			<div class="clock-face clock-minutes">
-				<span class="clock-hand"></span>
+			<div class="clock-menu">
+				<ul>
+					<li class="clock-menu-alarm">
+						<img src="images/alarm.svg">
+					</li>
+					<li class="clock-menu-time">01:15pm</li>
+					<li class="clock-menu-time">03:35pm</li>
+					<li class="clock-menu-button">+</li>
+				</ul>
 			</div>
-
-			<div class="clock-face clock-hours">
-				<span class="clock-hand"></span>
-			</div>
-
-			<time datetime="" class="clock-time">0:00<small>am</small></time>
 		</section>
 
 		<script src="moment.min.js"></script>
