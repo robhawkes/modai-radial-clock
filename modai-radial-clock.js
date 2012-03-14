@@ -38,7 +38,7 @@ function updateClock() {
 	secondHands[0].style.MsTransform = "rotate("+secondAngle+"deg)";
 	secondHands[0].style.transform = "rotate("+secondAngle+"deg)";
 
-	var timeString = hours+":"+("0"+minutes).substr(-2);
+	var timeString = time.format("hh")+":"+time.format("mm")+"<small>"+time.format("a")+"</small>";
 	if (timeOutput[0].innerHTML != timeString) {
 		timeOutput[0].innerHTML = timeString;
 	}
