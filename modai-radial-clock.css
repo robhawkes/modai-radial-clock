@@ -329,3 +329,7 @@ body.night {
   transition-duration: 0.4s;
   margin-top: 0;
 }
+/* line 275, modai-radial-clock.scss */
+.clock:hover {
+  cursor: pointer;
+}
