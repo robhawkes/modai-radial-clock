@@ -28,6 +28,12 @@ body.night {
 }
 /* line 26, modai-radial-clock.scss */
 .clock .clock-face {
+  -moz-border-radius: 194px;
+  -webkit-border-radius: 194px;
+  -o-border-radius: 194px;
+  -ms-border-radius: 194px;
+  -khtml-border-radius: 194px;
+  border-radius: 194px;
   height: 194px;
   overflow: hidden;
   left: 15px;
@@ -36,14 +42,14 @@ body.night {
   width: 194px;
   z-index: 10;
 }
-/* line 36, modai-radial-clock.scss */
+/* line 37, modai-radial-clock.scss */
 .clock .clock-halo {
-  -moz-border-radius: 194px;
-  -webkit-border-radius: 194px;
-  -o-border-radius: 194px;
-  -ms-border-radius: 194px;
-  -khtml-border-radius: 194px;
-  border-radius: 194px;
+  -moz-border-radius: 192px;
+  -webkit-border-radius: 192px;
+  -o-border-radius: 192px;
+  -ms-border-radius: 192px;
+  -khtml-border-radius: 192px;
+  border-radius: 192px;
   -moz-box-shadow: 0 0 40px #ffde39;
   -webkit-box-shadow: 0 0 40px #ffde39;
   -o-box-shadow: 0 0 40px #ffde39;
@@ -57,7 +63,7 @@ body.night {
   width: 192px;
   z-index: 20;
 }
-/* line 50, modai-radial-clock.scss */
+/* line 51, modai-radial-clock.scss */
 .clock.day .clock-face {
   -moz-border-radius: 194px;
   -webkit-border-radius: 194px;
@@ -67,84 +73,87 @@ body.night {
   border-radius: 194px;
   background-color: #fff;
 }
-/* line 55, modai-radial-clock.scss */
+/* line 56, modai-radial-clock.scss */
 .clock.day .clock-halo {
   border-color: #F7DF4D;
 }
-/* line 59, modai-radial-clock.scss */
+/* line 60, modai-radial-clock.scss */
 .clock.day .clock-time {
   color: #000;
 }
-/* line 62, modai-radial-clock.scss */
+/* line 63, modai-radial-clock.scss */
 .clock.day .clock-time small {
   color: #666;
 }
-/* line 68, modai-radial-clock.scss */
+/* line 69, modai-radial-clock.scss */
 .clock.day .clock-unit.clock-hours {
   border-color: #282828;
 }
-/* line 71, modai-radial-clock.scss */
+/* line 72, modai-radial-clock.scss */
 .clock.day .clock-unit.clock-hours .clock-hand {
   background-color: #282828;
 }
-/* line 76, modai-radial-clock.scss */
+/* line 77, modai-radial-clock.scss */
 .clock.day .clock-unit.clock-minutes {
   border-color: #6f7073;
 }
-/* line 79, modai-radial-clock.scss */
+/* line 80, modai-radial-clock.scss */
 .clock.day .clock-unit.clock-minutes .clock-hand {
   background-color: #6f7073;
 }
-/* line 84, modai-radial-clock.scss */
+/* line 85, modai-radial-clock.scss */
 .clock.day .clock-unit.clock-seconds {
   border-color: #c1bfc0;
 }
-/* line 87, modai-radial-clock.scss */
+/* line 88, modai-radial-clock.scss */
 .clock.day .clock-unit.clock-seconds .clock-hand {
   background-color: #c1bfc0;
 }
-/* line 95, modai-radial-clock.scss */
+/* line 96, modai-radial-clock.scss */
 .clock.night .clock-face {
+  background-color: #7d8288;
+}
+/* line 100, modai-radial-clock.scss */
+.clock.night .clock-halo {
   -moz-box-shadow: 0 0 40px #fdf6c9;
   -webkit-box-shadow: 0 0 40px #fdf6c9;
   -o-box-shadow: 0 0 40px #fdf6c9;
   box-shadow: 0 0 40px #fdf6c9;
-  background-color: #7d8288;
   border-color: #faf6d1;
 }
-/* line 101, modai-radial-clock.scss */
+/* line 105, modai-radial-clock.scss */
 .clock.night .clock-time {
   color: #fff;
 }
-/* line 104, modai-radial-clock.scss */
+/* line 108, modai-radial-clock.scss */
 .clock.night .clock-time small {
   color: #fff;
 }
-/* line 110, modai-radial-clock.scss */
+/* line 114, modai-radial-clock.scss */
 .clock.night .clock-unit.clock-hours {
   border-color: #282828;
 }
-/* line 113, modai-radial-clock.scss */
+/* line 117, modai-radial-clock.scss */
 .clock.night .clock-unit.clock-hours .clock-hand {
   background-color: #282828;
 }
-/* line 118, modai-radial-clock.scss */
+/* line 122, modai-radial-clock.scss */
 .clock.night .clock-unit.clock-minutes {
   border-color: #c1bfc0;
 }
-/* line 121, modai-radial-clock.scss */
+/* line 125, modai-radial-clock.scss */
 .clock.night .clock-unit.clock-minutes .clock-hand {
   background-color: #c1bfc0;
 }
-/* line 126, modai-radial-clock.scss */
+/* line 130, modai-radial-clock.scss */
 .clock.night .clock-unit.clock-seconds {
   border-color: #fff;
 }
-/* line 129, modai-radial-clock.scss */
+/* line 133, modai-radial-clock.scss */
 .clock.night .clock-unit.clock-seconds .clock-hand {
   background-color: #fff;
 }
-/* line 136, modai-radial-clock.scss */
+/* line 140, modai-radial-clock.scss */
 .clock .clock-time {
   display: block;
   height: 40px;
@@ -159,7 +168,7 @@ body.night {
   top: 50%;
   width: 100%;
 }
-/* line 150, modai-radial-clock.scss */
+/* line 154, modai-radial-clock.scss */
 .clock .clock-time small {
   display: block;
   font-size: 0.5em;
@@ -167,7 +176,7 @@ body.night {
   margin-top: -2px;
   text-transform: uppercase;
 }
-/* line 159, modai-radial-clock.scss */
+/* line 163, modai-radial-clock.scss */
 .clock .clock-unit {
   -moz-border-radius: 174px;
   -webkit-border-radius: 174px;
@@ -182,7 +191,7 @@ body.night {
   top: 0;
   width: 174px;
 }
-/* line 168, modai-radial-clock.scss */
+/* line 172, modai-radial-clock.scss */
 .clock .clock-unit .clock-hand {
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -197,7 +206,7 @@ body.night {
   top: -11px;
   width: 20px;
 }
-/* line 179, modai-radial-clock.scss */
+/* line 183, modai-radial-clock.scss */
 .clock .clock-unit.clock-minutes {
   -moz-border-radius: 158px;
   -webkit-border-radius: 158px;
@@ -210,7 +219,7 @@ body.night {
   margin: 8px 0 0 8px;
   width: 158px;
 }
-/* line 187, modai-radial-clock.scss */
+/* line 191, modai-radial-clock.scss */
 .clock .clock-unit.clock-seconds {
   -moz-border-radius: 142px;
   -webkit-border-radius: 142px;
@@ -223,7 +232,7 @@ body.night {
   margin: 18px 0 0 18px;
   width: 142px;
 }
-/* line 196, modai-radial-clock.scss */
+/* line 200, modai-radial-clock.scss */
 .clock .clock-menu {
   left: 50%;
   margin: -40px 0 0 -75px;
@@ -231,7 +240,7 @@ body.night {
   position: relative;
   width: 150px;
 }
-/* line 203, modai-radial-clock.scss */
+/* line 207, modai-radial-clock.scss */
 .clock .clock-menu ul {
   -moz-transition-property: all;
   -webkit-transition-property: all;
@@ -255,30 +264,30 @@ body.night {
   list-style-type: none;
   margin-left: 0;
 }
-/* line 215, modai-radial-clock.scss */
+/* line 219, modai-radial-clock.scss */
 .clock .clock-menu li {
   background-color: #fff;
   border-top: 2px solid #c1bfc0;
   padding: 10px 0;
 }
-/* line 221, modai-radial-clock.scss */
+/* line 225, modai-radial-clock.scss */
 .clock .clock-menu .clock-menu-alarm {
   border: none;
   color: #fff;
   height: 135px;
   padding: 0;
 }
-/* line 227, modai-radial-clock.scss */
+/* line 231, modai-radial-clock.scss */
 .clock .clock-menu .clock-menu-alarm img {
   bottom: 0;
   margin-top: 85px;
 }
-/* line 234, modai-radial-clock.scss */
+/* line 238, modai-radial-clock.scss */
 .clock .clock-menu .clock-menu-time:hover {
   background-color: #c1bfc0;
   cursor: pointer;
 }
-/* line 240, modai-radial-clock.scss */
+/* line 244, modai-radial-clock.scss */
 .clock .clock-menu .clock-menu-button {
   -moz-border-radius-bottomleft: 150px;
   -webkit-border-bottom-left-radius: 150px;
@@ -303,12 +312,12 @@ body.night {
   padding: 0;
   width: 150px;
 }
-/* line 254, modai-radial-clock.scss */
+/* line 258, modai-radial-clock.scss */
 .clock .clock-menu .clock-menu-button:hover {
   background-color: #6f7073;
   cursor: pointer;
 }
-/* line 263, modai-radial-clock.scss */
+/* line 267, modai-radial-clock.scss */
 .clock.active .clock-menu ul {
   -moz-transition-property: all;
   -webkit-transition-property: all;

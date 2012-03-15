@@ -54,6 +54,27 @@ function updateClock() {
 		timeOutput[0].innerHTML = timeString;
 	}
 
+	// Set theme depending on time of day
+	if (time.format("H") > 19 || time.format("H") < 7) {
+		for (var i = 0; i < clocks.length; i++) {
+			var clock = clocks[i];
+			clock.classList.add("night");
+			clock.classList.remove("day");
+
+			document.body.classList.add("night");
+			document.body.classList.remove("day");
+		}
+	} else {
+		for (var i = 0; i < clocks.length; i++) {
+			var clock = clocks[i];
+			clock.classList.add("day");
+			clock.classList.remove("night");
+
+			document.body.classList.add("day");
+			document.body.classList.remove("night");
+		}
+	}
+
 	setTimeout(updateClock, 900);
 }
 

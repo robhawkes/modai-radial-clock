@@ -24,6 +24,7 @@ body {
 	width: 224px;
 
 	.clock-face {
+		@include border-radius(194px);
 		height: 194px;
 		overflow: hidden;
 		left: 15px;
@@ -34,7 +35,7 @@ body {
 	}
 
 	.clock-halo {
-		@include border-radius(194px);
+		@include border-radius(192px);
 		@include box-shadow(0 0 40px #FFDE39);
 		border: 15px solid;
 		height: 192px;
@@ -93,8 +94,11 @@ body {
 
 	&.night {
 		.clock-face {
-			@include box-shadow(0 0 40px #fdf6c9);
 			background-color: #7d8288;
+		}
+
+		.clock-halo {
+			@include box-shadow(0 0 40px #fdf6c9);
 			border-color: #faf6d1;
 		}
 
