@@ -24,20 +24,36 @@ body {
 	width: 224px;
 
 	.clock-face {
-		border: 15px solid;
 		height: 194px;
 		overflow: hidden;
+		left: 15px;
 		position: relative;
+		top: 15px;
 		width: 194px;
 		z-index: 10;
+	}
+
+	.clock-halo {
+		@include border-radius(194px);
+		@include box-shadow(0 0 40px #FFDE39);
+		border: 15px solid;
+		height: 192px;
+		left: 1px;
+		overflow: hidden;
+		position: absolute;
+		top: 1px;
+		width: 192px;
+		z-index: 20;
 	}
 
 	&.day {
 		.clock-face {
 			@include border-radius(194px);
-			@include box-shadow(0 0 40px #fdf6c9);
 			background-color: #fff;
-			border-color: #f9e04a;
+		}
+
+		.clock-halo {
+			border-color: #F7DF4D;
 		}
 
 		.clock-time {
@@ -183,7 +199,6 @@ body {
 		overflow: hidden;
 		position: relative;
 		width: 150px;
-		z-index: -10;
 
 		ul {
 			@include transition-property(all);
@@ -206,13 +221,12 @@ body {
 		.clock-menu-alarm {
 			border: none;
 			color: #fff;
-			height: 105px;
+			height: 135px;
 			padding: 0;
 
 			img {
 				bottom: 0;
-				margin-top: 55px;
-				width: 40px;
+				margin-top: 85px;
 			}
 		}
 
@@ -235,7 +249,7 @@ body {
 			height: 75px;
 			line-height: 65px;
 			padding: 0;
-			width: 100%;
+			width: 150px;
 
 			&:hover {
 				background-color: #6f7073;
@@ -244,8 +258,7 @@ body {
 		}
 	}
 
-	&:hover {
-		cursor: pointer;
+	&.active {
 		.clock-menu {
 			ul {
 				@include transition-property(all);

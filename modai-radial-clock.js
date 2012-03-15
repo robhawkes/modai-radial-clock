@@ -1,8 +1,19 @@
+var clocks = document.getElementsByClassName("clock");
 var hourHands = document.getElementsByClassName("clock-hours");
 var minuteHands = document.getElementsByClassName("clock-minutes");
 var secondHands = document.getElementsByClassName("clock-seconds");
 var timeOutput = document.getElementsByClassName("clock-time")
 var time;
+
+function initClock() {
+	// Set up listeners
+	for (var i = 0; i < clocks.length; i++) {
+		var clock = clocks[i];
+		clock.addEventListener("click", onClick, true);
+	}
+
+	updateClock();
+}
 
 function updateClock() {
 	// Store current time
@@ -46,4 +57,11 @@ function updateClock() {
 	setTimeout(updateClock, 900);
 }
 
-updateClock();
+function onClick(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	this.classList.toggle("active");
+}
+
+initClock();
